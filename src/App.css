@@ -1,0 +1,58 @@
+.form, .header {
+  display: flex;
+  justify-content: center;
+}
+
+input, textarea, option, select {
+  border: 2px solid red;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+label {
+  width: 100%;
+}
+
+/* #check {
+  height: 1.15em;
+  margin: 0;
+  margin-right: 15px;
+  padding: 3px;
+  width: 1.15em;
+} */
+
+button {
+  background-color: rgb(30, 30, 30);
+  border-color: rgb(150, 0, 0);
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 4px 2px;
+  padding: 16px 32px;
+  text-align: center;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: rgb(200, 0, 0);
+}
+
+h1 {
+  font-size: 70px;
+  height: 100px;
+  margin: 0;
+  position: absolute;
+}
+
+fieldset {
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 100px;
+  width: 80%;
+}
