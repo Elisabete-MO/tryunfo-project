@@ -1,6 +1,12 @@
-.form, .header {
+.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.form, .header, .card {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 input, textarea, option, select {
@@ -46,7 +52,7 @@ h1 {
   position: absolute;
 }
 
-fieldset {
+.inputArea {
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
@@ -54,5 +60,16 @@ fieldset {
   flex-flow: column wrap;
   position: absolute;
   top: 100px;
+  width: 80%;
+}
+
+.visualization {
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
+  display: flex;
+  flex-flow: column wrap;
+  position: absolute;
+  top: 800px;
   width: 80%;
 }

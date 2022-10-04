@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
 import './App.css';
+import Card from './components/Card';
 
 class App extends Component {
   // state = { cardName: '',
@@ -22,12 +23,13 @@ class App extends Component {
   render() {
     // const { filterName, filterTrunfo, rareFilter } = this.state;
     return (
-      <>
+      <div className="container">
         <div className="header">
           <h1>Tryunfo</h1>
         </div>
         <Form />
-      </>
+        <Card />
+      </div>
     );
   }
 }

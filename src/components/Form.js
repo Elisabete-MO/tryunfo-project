@@ -18,9 +18,9 @@ class Form extends Component {
       onSaveButtonClick } = this.props;
     return (
       <div className="form">
-        <fieldset>
+        <fieldset className="inputArea">
           <label htmlFor="cardName">
-            Nome da cardName
+            Nome da carta
             <input
               type="text"
               data-testid="name-input"
@@ -32,8 +32,8 @@ class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="desc">
-            Descrição da cardName
+          <label htmlFor="cardDescription">
+            Descrição da carta
             <textarea
               data-testid="description-input"
               id="cardDescription"
@@ -84,7 +84,7 @@ class Form extends Component {
             />
           </label>
           <label htmlFor="cardImage">
-            cardImagem
+            Imagem
             <input
               type="text"
               data-testid="image-input"
