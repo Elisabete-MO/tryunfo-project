@@ -91,7 +91,6 @@ class Form extends Component {
               id="cardImage"
               name="cardImage"
               value={ cardImage }
-              maxLength="40"
               placeholder="Garrosh Hellscream"
               onChange={ onInputChange }
             />

@@ -28,14 +28,17 @@ class Card extends Component {
             id="cardImage"
             name="cardImage"
           />
-          <textarea
-            data-testid="description-card"
-            id="cardDescription"
-            name="cardDescription"
-            value={ cardDescription }
-            maxLength="1000"
-            placeholder="Invited by Thrall to join the Horde after the reopening o..."
-          />
+          <label htmlFor="cardDescription">
+            Descrição
+            <textarea
+              data-testid="description-card"
+              id="cardDescription"
+              name="cardDescription"
+              value={ cardDescription }
+              maxLength="1000"
+              placeholder="Invited by Thrall to join the Horde after the reopening o..."
+            />
+          </label>
           <p data-testid="attr1-card" id="cardAttr1" name="cardAttr1">
             Primeiro atributo
             {' '}
@@ -52,8 +55,6 @@ class Card extends Component {
             { cardAttr3 }
           </p>
           <p data-testid="rare-card" id="cardRare" name="cardRare">
-            Raridade
-            {' '}
             { cardRare }
           </p>
           {

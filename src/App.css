@@ -1,3 +1,9 @@
+body {
+  background-attachment: fixed;
+  background-image: url('./components/back.jpg');
+  background-size: cover;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -31,7 +37,7 @@ label {
 } */
 
 button {
-  background-color: rgb(30, 30, 30);
+  background-color: rgb(87, 17, 32);
   border-color: rgb(150, 0, 0);
   border-radius: 4px;
   font-size: 16px;
@@ -46,6 +52,7 @@ button:hover {
 }
 
 h1 {
+  color: rgb(186, 109, 250);
   font-size: 70px;
   height: 100px;
   margin: 0;
@@ -67,6 +74,7 @@ h1 {
   align-items: center;
   border-radius: 20px;
   box-shadow: 0 4px 19px rgba(255, 0, 0, 0.8);
+  color: azure;
   display: flex;
   flex-flow: column wrap;
   position: absolute;
