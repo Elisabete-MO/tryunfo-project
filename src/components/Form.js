@@ -1,113 +1,153 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Form extends Component {
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      // hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick } = this.props;
     return (
       <div className="form">
         <fieldset>
-          <label htmlFor="carta">
-            Nome da Carta
+          <label htmlFor="cardName">
+            Nome da cardName
             <input
               type="text"
               data-testid="name-input"
-              id="carta"
-              name="carta"
-              // value={ nome }
+              id="cardName"
+              name="cardName"
+              value={ cardName }
               maxLength="40"
               placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              onChange={ onInputChange }
             />
           </label>
           <label htmlFor="desc">
-            Descrição da carta
+            Descrição da cardName
             <textarea
               data-testid="description-input"
-              id="resumo"
-              name="resumo"
-              // value={ endereco }
+              id="cardDescription"
+              name="cardDescription"
+              value={ cardDescription }
               maxLength="1000"
+              onChange={ onInputChange }
               placeholder="Invited by Thrall to join the Horde after the reopening o..."
-              // onChange={ this.handleChange }
             />
           </label>
-          <label htmlFor="attr1">
+          <label htmlFor="cardAttr1">
             Primeiro atributo
             <input
               type="number"
               data-testid="attr1-input"
-              id="attr1"
-              name="attr1"
-              // value={ nome }
+              id="cardAttr1"
+              name="cardAttr1"
+              value={ cardAttr1 }
               maxLength="40"
               placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="attr2">
+          <label htmlFor="cardAttr2">
             Segundo atributo
             <input
               type="number"
               data-testid="attr2-input"
-              id="attr2"
-              name="attr2"
-              // value={ nome }
+              id="cardAttr2"
+              name="cardAttr2"
+              value={ cardAttr2 }
               maxLength="40"
               placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="attr3">
+          <label htmlFor="cardAttr3">
             Terceiro atributo
             <input
               type="number"
               data-testid="attr3-input"
-              id="attr3"
-              name="attr3"
-              // value={ nome }
+              id="cardAttr3"
+              name="cardAttr3"
+              value={ cardAttr3 }
               maxLength="40"
               placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="image">
-            Imagem
+          <label htmlFor="cardImage">
+            cardImagem
             <input
               type="text"
               data-testid="image-input"
-              id="image"
-              name="image"
-              // value={ nome }
+              id="cardImage"
+              name="cardImage"
+              value={ cardImage }
               maxLength="40"
               placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="rarity">
+          <label htmlFor="cardRare">
             Raridade
-            <select name="rarity" id="rarity" data-testid="rare-input">
+            <select
+              name="cardRare"
+              id="cardRare"
+              value={ cardRare }
+              data-testid="rare-input"
+              onChange={ onInputChange }
+            >
               <option key="normal">normal</option>
               <option key="raro">raro</option>
               <option key="muito raro">muito raro</option>
             </select>
           </label>
-          <label htmlFor="check">
+          <label htmlFor="cardTrunfo">
             <input
               type="checkbox"
               data-testid="trunfo-input"
-              id="check"
-              name="check"
-              // value={ nome }
-              maxLength="40"
-              placeholder="Garrosh Hellscream"
-              // onChange={ this.handleChange }
+              id="cardTrunfo"
+              name="cardTrunfo"
+              checked={ cardTrunfo }
+              onChange={ onInputChange }
             />
             Super Trunfo
           </label>
-          <button type="submit" data-testid="save-button">Salvar</button>
+          <button
+            type="submit"
+            data-testid="save-button"
+            disabled={ isSaveButtonDisabled }
+            onClick={ onSaveButtonClick }
+          >
+            Salvar
+          </button>
         </fieldset>
       </div>
     );
   }
 }
+
+Form.propTypes = {
+  cardName: PropTypes.string.isRequired,
+  cardDescription: PropTypes.string.isRequired,
+  cardAttr1: PropTypes.string.isRequired,
+  cardAttr2: PropTypes.string.isRequired,
+  cardAttr3: PropTypes.string.isRequired,
+  cardImage: PropTypes.string.isRequired,
+  cardRare: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  // hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSaveButtonClick: PropTypes.func.isRequired,
+};
 
 export default Form;
