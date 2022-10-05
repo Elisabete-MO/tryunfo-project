@@ -12,10 +12,13 @@ class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      // hasTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick } = this.props;
+
+      console.log(hasTrunfo);
+
     return (
       <div className="form">
         <fieldset className="inputArea">
@@ -109,17 +112,20 @@ class Form extends Component {
               <option key="muito raro">muito raro</option>
             </select>
           </label>
-          <label htmlFor="cardTrunfo">
-            <input
-              type="checkbox"
-              data-testid="trunfo-input"
-              id="cardTrunfo"
-              name="cardTrunfo"
-              checked={ cardTrunfo }
-              onChange={ onInputChange }
-            />
-            Super Trunfo
-          </label>
+          { hasTrunfo === false
+            ? (
+              <label htmlFor="cardTrunfo">
+                <input
+                  type="checkbox"
+                  data-testid="trunfo-input"
+                  id="cardTrunfo"
+                  name="cardTrunfo"
+                  checked={ cardTrunfo }
+                  onChange={ onInputChange }
+                />
+                Super Trunfo
+              </label>)
+            : <p> Você já tem um Super Trunfo em seu baralho </p> }
           <button
             type="submit"
             data-testid="save-button"
@@ -143,7 +149,7 @@ Form.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

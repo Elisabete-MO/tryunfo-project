@@ -12,18 +12,14 @@ class App extends Component {
     cardImage: '',
     cardRare: 'normal',
     cardTrunfo: false,
-    // hasTrunfo: false,
+    hasTrunfo: false,
     isSaveButtonDisabled: true,
     cards: [],
-    // filterName: '',
-    // filterTrunfo: false,
-    // rareFilter: 'todas',
   };
 
   onInputChange = (event) => {
     const { name, value, type, checked } = event.target;
     const changed = type === 'checkbox' ? checked : value;
-
     this.setState({
       [name]: changed,
     }, () => this.validation());
@@ -76,6 +72,12 @@ class App extends Component {
           cardTrunfo: old.cardTrunfo,
         }],
     }));
+    this.valTrunfo();
+  };
+
+  valTrunfo = () => {
+    const { cardTrunfo, hasTrunfo } = this.state;
+    if (cardTrunfo && !hasTrunfo) this.setState({ hasTrunfo: true });
   };
 
   render() {
@@ -89,8 +91,8 @@ class App extends Component {
       cardAttr3,
       cardRare,
       cardTrunfo,
+      hasTrunfo,
       isSaveButtonDisabled } = this.state;
-    // const { filterName, filterTrunfo, rareFilter } = this.state;
     return (
       <div className="container">
         <div className="header">
@@ -105,6 +107,7 @@ class App extends Component {
           cardAttr3={ cardAttr3 }
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
+          hasTrunfo={ hasTrunfo }
           state={ state }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
