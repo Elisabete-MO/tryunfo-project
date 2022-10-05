@@ -52,8 +52,8 @@ class Form extends Component {
               id="cardAttr1"
               name="cardAttr1"
               value={ cardAttr1 }
-              maxLength="40"
-              placeholder="Garrosh Hellscream"
+              max={ 90 }
+              min="0"
               onChange={ onInputChange }
             />
           </label>
@@ -65,8 +65,8 @@ class Form extends Component {
               id="cardAttr2"
               name="cardAttr2"
               value={ cardAttr2 }
-              maxLength="40"
-              placeholder="Garrosh Hellscream"
+              max="90"
+              min="0"
               onChange={ onInputChange }
             />
           </label>
@@ -78,8 +78,8 @@ class Form extends Component {
               id="cardAttr3"
               name="cardAttr3"
               value={ cardAttr3 }
-              maxLength="40"
-              placeholder="Garrosh Hellscream"
+              max="90"
+              min="0"
               onChange={ onInputChange }
             />
           </label>
