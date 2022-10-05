@@ -28,7 +28,7 @@ class Form extends Component {
               name="cardName"
               value={ cardName }
               maxLength="40"
-              placeholder="Garrosh Hellscream"
+              placeholder="Sylvanas Windrunner"
               onChange={ onInputChange }
             />
           </label>
@@ -41,7 +41,7 @@ class Form extends Component {
               value={ cardDescription }
               maxLength="1000"
               onChange={ onInputChange }
-              placeholder="Invited by Thrall to join the Horde after the reopening o..."
+              placeholder="Lady Sylvanas Windrunner, formerly styled 'the Dark Lady' a..."
             />
           </label>
           <label htmlFor="cardAttr1">
@@ -91,7 +91,7 @@ class Form extends Component {
               id="cardImage"
               name="cardImage"
               value={ cardImage }
-              placeholder="Garrosh Hellscream"
+              placeholder="https://blz-contentstack-images.akamaized.net/screenshot_titan.jpg"
               onChange={ onInputChange }
             />
           </label>

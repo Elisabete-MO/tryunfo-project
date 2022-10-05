@@ -14,7 +14,7 @@ class App extends Component {
     cardTrunfo: false,
     // hasTrunfo: false,
     isSaveButtonDisabled: true,
-    // cards: [],
+    cards: [],
     // filterName: '',
     // filterTrunfo: false,
     // rareFilter: 'todas',
@@ -55,6 +55,29 @@ class App extends Component {
     }
   };
 
+  onSaveButtonClick = () => {
+    this.setState((old) => ({
+      cardName: '',
+      cardDescription: '',
+      cardImage: '',
+      cardRare: 'normal',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardTrunfo: false,
+      cards: [...old.cards,
+        { cardName: old.cardName,
+          cardDescription: old.cardDescription,
+          cardImage: old.cardImage,
+          cardRare: old.cardRare,
+          cardAttr1: old.cardAttr1,
+          cardAttr2: old.cardAttr2,
+          cardAttr3: old.cardAttr3,
+          cardTrunfo: old.cardTrunfo,
+        }],
+    }));
+  };
+
   render() {
     const { ...state } = this.state;
     const {
@@ -74,9 +97,18 @@ class App extends Component {
           <h1>Tryunfo</h1>
         </div>
         <Form
+          cardName={ cardName }
+          cardImage={ cardImage }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
           state={ state }
           onInputChange={ this.onInputChange }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }

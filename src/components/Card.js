@@ -36,7 +36,7 @@ class Card extends Component {
               name="cardDescription"
               value={ cardDescription }
               maxLength="1000"
-              placeholder="Invited by Thrall to join the Horde after the reopening o..."
+              placeholder="Lady Sylvanas Windrunner, formerly styled 'the Dark Lady' a..."
             />
           </label>
           <p data-testid="attr1-card" id="cardAttr1" name="cardAttr1">
