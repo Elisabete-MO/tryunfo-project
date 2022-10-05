@@ -17,8 +17,6 @@ class Form extends Component {
       onInputChange,
       onSaveButtonClick } = this.props;
 
-      console.log(hasTrunfo);
-
     return (
       <div className="form">
         <fieldset className="inputArea">

@@ -92,7 +92,8 @@ class App extends Component {
       cardRare,
       cardTrunfo,
       hasTrunfo,
-      isSaveButtonDisabled } = this.state;
+      isSaveButtonDisabled,
+      cards } = this.state;
     return (
       <div className="container">
         <div className="header">
@@ -123,6 +124,21 @@ class App extends Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div className="cards">
+          { cards.map((card, index) => (
+            <div key={ index }>
+              <Card
+                cardName={ card.cardName }
+                cardImage={ card.cardImage }
+                cardDescription={ card.cardDescription }
+                cardAttr1={ card.cardAttr1 }
+                cardAttr2={ card.cardAttr2 }
+                cardAttr3={ card.cardAttr3 }
+                cardRare={ card.cardRare }
+                cardTrunfo={ card.cardTrunfo }
+              />
+            </div>))}
+        </div>
       </div>
     );
   }
